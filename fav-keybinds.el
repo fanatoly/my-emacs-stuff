@@ -6,5 +6,6 @@
 
 (global-set-key [f12] 'restore-default-frame)
 
+
 ;; Sets the delete key to work correctly
 (global-set-key [f13] 'delete-char)

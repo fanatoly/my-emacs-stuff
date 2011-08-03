@@ -20,10 +20,6 @@
 (setq inhibit-startup-message t)
 
 
-
-
-;; Look at S1:[TGARDNER].emacs
-
 (put 'set-goal-column 'disabled nil)
 
 ;; ** Maximum colors
