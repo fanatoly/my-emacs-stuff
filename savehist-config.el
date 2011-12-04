@@ -1,6 +1,4 @@
-(require 'savehist-20+ "savehist")
-(require 'maxframe)
-(add-hook 'window-setup-hook 'restore-frame)
+(require 'savehist "savehist")
 
 ;; Saves state when emacs exits
 ;; Would be nice to modify the default per user
