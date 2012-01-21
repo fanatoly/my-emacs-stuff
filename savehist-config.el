@@ -5,11 +5,5 @@
 (add-to-list 'savehist-additional-variables 'search-ring)
 (add-to-list 'savehist-additional-variables 'regexp-search-ring)
 (add-to-list 'savehist-additional-variables 'kill-ring)
-(add-to-list 'savehist-additional-variables 'mf-restore-width)
-(add-to-list 'savehist-additional-variables 'mf-restore-height)
-(add-to-list 'savehist-additional-variables 'mf-restore-top)
-(add-to-list 'savehist-additional-variables 'mf-restore-left)
-
-(add-hook 'savehist-save-hook 'mf-save-window-geom)
 
 (savehist-mode 1)
