@@ -9,3 +9,8 @@
 
 ;; Sets the delete key to work correctly
 (global-set-key [f13] 'delete-char)
+
+(global-set-key [f3] 'compile)
+
+(global-set-key [(control ?x) (?x)] 'ff-find-other-file )
+
