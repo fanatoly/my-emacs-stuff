@@ -46,3 +46,8 @@
 ;;Shifts the brace two spots back
 (setq c-continued-brace-offset -2)
 
+;; uses distinctive path parts to identify identically named buffers
+(require 'uniquify) 
+(setq 
+  uniquify-buffer-name-style 'post-forward
+  uniquify-separator ":")

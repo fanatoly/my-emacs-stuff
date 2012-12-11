@@ -14,3 +14,5 @@
 
 (global-set-key [(control ?x) (?x)] 'ff-find-other-file )
 
+;;find file at point
+(ffap-bindings)
