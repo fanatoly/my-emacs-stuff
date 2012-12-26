@@ -1,1 +1,15 @@
 my emacs configuration -- use at your own risk
+
+typical .emacs contents
+
+<code>
+(setq fanatoly-elisp-lib "~/elisp/my-emacs-stuff/") ;; path to git repo
+(add-to-list 'load-path "~/elisp/ensime/elisp")
+(add-to-list 'load-path fanatoly-elisp-lib)
+(setq fanatoly-libfiles (file-expand-wildcards (concat fanatoly-elisp-lib "*.el")))
+
+
+(dolist (lib fanatoly-libfiles)
+  (load lib))
+
+</code>
