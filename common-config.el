@@ -51,3 +51,5 @@
 (setq 
   uniquify-buffer-name-style 'post-forward
   uniquify-separator ":")
+
+(if (functionp 'ns-toggle-fullscreen) (ns-toggle-fullscreen))
