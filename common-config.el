@@ -53,3 +53,5 @@
   uniquify-separator ":")
 
 (if (functionp 'ns-toggle-fullscreen) (ns-toggle-fullscreen))
+
+(setq indent-tabs-mode nil)

@@ -10,9 +10,11 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(setq my-packages '(lua-mode scala-mode magit find-file-in-project))
+(setq my-packages '(lua-mode scala-mode2 magit find-file-in-project))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+
 
