@@ -16,8 +16,6 @@
 				  tab-width 4
 				  indent-tabs-mode nil)))
 
-(add-hook 'java-mode-hook
-	  (lambda ()
-	    "Treat Java 1.5 @-style annotations as comments."
-	    (setq c-comment-start-regexp "(@|/(/|[*][*]?))")
-	    (modify-syntax-entry ?@ "< b" java-mode-syntax-table)))
+(require 'java-mode-indent-annotations)
+
+(add-hook 'java-mode-hook 'java-mode-indent-annotations-setup)
