@@ -53,3 +53,16 @@
   uniquify-separator ":")
 
 (if (functionp 'ns-toggle-fullscreen) (ns-toggle-fullscreen))
+
+(add-to-list 'auto-mode-alist '("\\.log\\|\\.out" . auto-revert-tail-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs" . html-mode))
+
+(global-set-key [(control ?x)(control ?g)] 'find-grep)
+
+(add-hook 'before-save-hook
+          (lambda ()
+            (when buffer-file-name
+              (let ((dir (file-name-directory buffer-file-name)))
+                (when (and (not (file-exists-p dir))
+                           (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
+                  (make-directory dir t))))))
