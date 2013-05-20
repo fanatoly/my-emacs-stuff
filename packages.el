@@ -10,7 +10,15 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(setq my-packages '(lua-mode scala-mode2 magit find-file-in-project coffee-mode protobuf-mode))
+(setq my-packages 
+      '(lua-mode
+	scala-mode2
+	magit 
+	find-file-in-project
+	coffee-mode 
+	protobuf-mode 
+	icicles
+	find-file-in-repository))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
