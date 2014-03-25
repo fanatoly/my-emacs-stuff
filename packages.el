@@ -1,6 +1,6 @@
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages")
+			 ;; ("marmalade" . "http://marmalade-repo.org/packages")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 
@@ -18,11 +18,17 @@
 	coffee-mode 
 	protobuf-mode 
 	icicles
-	find-file-in-repository))
+	markdown-mode
+	go-mode
+	gist
+	yagist
+	find-file-in-repository
+	ess
+	ess-R-data-view
+	ess-R-object-popup
+	sbt-mode))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
-
 
