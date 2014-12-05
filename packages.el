@@ -26,7 +26,8 @@
 	ess
 	ess-R-data-view
 	ess-R-object-popup
-	sbt-mode))
+	sbt-mode
+	rvm))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
