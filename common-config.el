@@ -47,8 +47,8 @@
 (setq c-continued-brace-offset -2)
 
 ;; uses distinctive path parts to identify identically named buffers
-(require 'uniquify) 
-(setq 
+(require 'uniquify)
+(setq
   uniquify-buffer-name-style 'post-forward
   uniquify-separator ":")
 
@@ -64,6 +64,10 @@
                 (when (and (not (file-exists-p dir))
                            (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
                   (make-directory dir t))))))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain) ;; Tiling window managers + OS X Yosemite fullscreen poop make it better to use the inline ediff mode.
 
 (setq indent-tabs-mode nil)
 

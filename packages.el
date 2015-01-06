@@ -9,14 +9,15 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+
 ;; Add in your own as you wish:
-(setq my-packages 
+(setq my-packages
       '(lua-mode
 	scala-mode2
-	magit 
+	magit
 	find-file-in-project
-	coffee-mode 
-	protobuf-mode 
+	coffee-mode
+	protobuf-mode
 	icicles
 	markdown-mode
 	go-mode
@@ -27,9 +28,9 @@
 	ess-R-data-view
 	ess-R-object-popup
 	sbt-mode
-	rvm))
+	rvm
+	ensime))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
