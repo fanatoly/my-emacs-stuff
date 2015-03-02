@@ -72,3 +72,6 @@
 (setq indent-tabs-mode nil)
 
 (ido-mode)
+
+;; larger monitors lead to excessive splitting
+(setq split-height-threshold 100)

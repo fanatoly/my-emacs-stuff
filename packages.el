@@ -29,7 +29,10 @@
 	ess-R-object-popup
 	sbt-mode
 	rvm
-	ensime))
+	ensime
+	rspec-mode
+	haml-mode
+	exec-path-from-shell))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
