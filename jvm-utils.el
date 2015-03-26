@@ -23,3 +23,5 @@
 (defun sbt:fix-prompt-in-comint ()
   (setq inhibit-read-only t))
 (add-hook 'sbt-mode-hook 'sbt:fix-prompt-in-comint)
+
+(define-key ensime-mode-map (kbd "C-c C-d d")'ensime-db-attach)

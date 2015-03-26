@@ -1,4 +1,4 @@
-;;commenting 
+;;commenting
 (global-set-key [f6] 'comment-region)
 (global-set-key [f7] 'uncomment-region)
 

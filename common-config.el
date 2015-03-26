@@ -56,6 +56,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.log\\|\\.out" . auto-revert-tail-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.thrift" . thrift-mode))
 
 (add-hook 'before-save-hook
           (lambda ()

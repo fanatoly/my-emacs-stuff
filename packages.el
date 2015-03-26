@@ -32,7 +32,8 @@
 	ensime
 	rspec-mode
 	haml-mode
-	exec-path-from-shell))
+	exec-path-from-shell
+	thrift))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
