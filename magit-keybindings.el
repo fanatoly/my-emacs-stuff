@@ -11,8 +11,16 @@
                     'oneline range (cons "--graph" magit-custom-options)))
 
 
+(defun magit-push-force ()
+  (let ((magit-custom-options "-f"))
+    (progn
+      (setq this-command 'magit-push)
+      (call-interactively this-command))))
+
+
 (global-set-key [(control ?c)(?g)(?s)] 'magit-status)
 (global-set-key [(control ?c)(?g)(?u)] 'magit-pull)
 (global-set-key [(control ?c)(?g)(?p)] 'magit-push)
+(global-set-key [(control ?c)(?g)(?P)] 'magit-push-force)
 (global-set-key [(control ?c)(?g)(?l)] 'magit-log-graph)
 (global-set-key [(control ?c)(?g)(?b)] 'magit-branch-manager)
