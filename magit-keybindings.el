@@ -12,6 +12,7 @@
 
 
 (defun magit-push-force ()
+  (interactive)
   (let ((magit-custom-options "-f"))
     (progn
       (setq this-command 'magit-push)
