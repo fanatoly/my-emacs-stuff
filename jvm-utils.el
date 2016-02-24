@@ -4,6 +4,8 @@
 (add-hook 'java-mode-hook 'ensime-scala-mode-hook)
 
 (add-to-list 'auto-mode-alist '("\\.scala" . scala-mode))
+(add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.groovy" . groovy-mode))
 (require 'compile)
 (add-to-list 'compilation-error-regexp-alist 'maven)
 (add-to-list 'compilation-error-regexp-alist-alist
@@ -25,3 +27,7 @@
 (add-hook 'sbt-mode-hook 'sbt:fix-prompt-in-comint)
 
 (define-key ensime-mode-map (kbd "C-c C-d d")'ensime-db-attach)
+
+(setq ensime-sbt-command "sbt")
+
+(set-face-attribute 'ensime-implicit-highlight nil :underline nil)

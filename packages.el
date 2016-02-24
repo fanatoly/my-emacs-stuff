@@ -33,7 +33,12 @@
 	rspec-mode
 	haml-mode
 	exec-path-from-shell
-	thrift))
+	thrift
+	groovy-mode
+	virtualenv
+	pyenv-mode
+	nvm
+	anaconda-mode))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
