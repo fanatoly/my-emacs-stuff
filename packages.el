@@ -38,7 +38,9 @@
 	virtualenv
 	pyenv-mode
 	nvm
-	anaconda-mode))
+	anaconda-mode
+	xterm-color
+	multi-term))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

@@ -31,3 +31,8 @@
 (setq ensime-sbt-command "sbt")
 
 (set-face-attribute 'ensime-implicit-highlight nil :underline nil)
+
+
+(defun sbt-restart ()
+  (interactive)
+  (sbt:run-sbt t t))

@@ -29,7 +29,13 @@
  (ansi-color-apply-on-region (point-min) (point-max) ) )
 
 (add-hook 'compilation-filter-hook 'fanatoly-apply-ansi-color-current-buffer)
-
+(require 'xterm-color)
+(add-hook 'comint-mode-hook
+	  (lambda ()
+	    ;; comint install
+	    (progn (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
+		   (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
+		   (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))))
 (if (require 'notifications)
     (add-to-list 'compilation-finish-functions
 		 (lambda (buffer msg)
