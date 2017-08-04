@@ -1,7 +1,8 @@
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ;; ("marmalade" . "http://marmalade-repo.org/packages")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+			 ("melpa-stable" . "https://melpa-stable.milkbox.net/packages/")
+			 ("melpa" . "https://melpa.milkbox.net/packages/")))
 
 
 (package-initialize)
@@ -40,8 +41,25 @@
 	nvm
 	anaconda-mode
 	xterm-color
-	multi-term))
+	multi-term
+	projectile
+	use-package))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(use-package ensime
+  :ensure t
+  :pin melpa)
+
+(use-package projectile
+  :demand
+  :pin melpa-stable
+  :init   (set projectile-use-git-grep t)
+  :config (projectile-global-mode t)
+  :bind   (("C-x g" . projectile-grep)))
+
+
+(require 'use-package)
+

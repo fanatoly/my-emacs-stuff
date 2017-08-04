@@ -1,7 +1,7 @@
 (require 'ensime)
 (require 'scala-mode2)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(add-hook 'java-mode-hook 'ensime-scala-mode-hook)
+;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;; (add-hook 'java-mode-hook 'ensime-scala-mode-hook)
 
 (add-to-list 'auto-mode-alist '("\\.scala" . scala-mode))
 (add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
@@ -36,3 +36,18 @@
 (defun sbt-restart ()
   (interactive)
   (sbt:run-sbt t t))
+
+(defun comint-hard-quit-subjob ()
+  "Send quit signal to the current subjob.
+This command also kills the pending input
+between the process mark and point."
+  (interactive)
+  (quit-process nil comint-ptyp))
+
+
+(defun comint-hard-quit-subjob ()
+  "Send quit signal to the current subjob.
+This command also kills the pending input
+between the process mark and point."
+  (interactive)
+  (interrupt-process nil comint-ptyp))

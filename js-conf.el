@@ -19,7 +19,7 @@
     (setq-local indent-tabs-mode nil)))
 (add-hook 'js-mode-hook 'setup-js-mode)
 
-
+(require 'nvm)
 (defun nvm-use-current ()
   (interactive)
   (nvm-use-for))

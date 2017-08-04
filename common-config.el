@@ -57,6 +57,7 @@
 (add-to-list 'auto-mode-alist '("\\.log\\|\\.out" . auto-revert-tail-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.thrift" . thrift-mode))
+(setq-default require-final-newline t)
 
 (add-hook 'before-save-hook
           (lambda ()
@@ -67,7 +68,9 @@
                   (make-directory dir t))))))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+(setq delete-trailing-lines nil)
+(setq require-final-newline 't)
+(print require-final-newline)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain) ;; Tiling window managers + OS X Yosemite fullscreen poop make it better to use the inline ediff mode.
 
 (setq indent-tabs-mode nil)
