@@ -21,7 +21,6 @@
 	protobuf-mode
 	icicles
 	markdown-mode
-	go-mode
 	gist
 	yagist
 	find-file-in-repository
@@ -56,9 +55,20 @@
 (use-package projectile
   :demand
   :pin melpa-stable
-  :init   (set projectile-use-git-grep t)
+  :init   (setq projectile-use-git-grep t)
   :config (projectile-global-mode t)
   :bind   (("C-x g" . projectile-grep)))
+
+(use-package go-mode
+  :ensure t
+  :demand
+  :pin melpa-stable)
+
+
+(use-package direnv
+  :ensure t
+  :demand
+  :pin melpa-stable)
 
 
 (require 'use-package)
