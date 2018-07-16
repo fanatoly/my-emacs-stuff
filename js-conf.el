@@ -1,5 +1,5 @@
 (setenv "NODE_NO_READLINE" "1")
-(setq-default indent-tabs-mode 0)
+(setq-default indent-tabs-mode nil)
 (defun setup-coffee-mode ()
     (progn
       (setq-local c-basic-offset 4)
@@ -23,3 +23,13 @@
 (defun nvm-use-current ()
   (interactive)
   (nvm-use-for))
+
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1))
+

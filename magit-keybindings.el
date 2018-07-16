@@ -24,4 +24,4 @@
 (global-set-key [(control ?c)(?g)(?p)] 'magit-push)
 (global-set-key [(control ?c)(?g)(?P)] 'magit-push-force)
 (global-set-key [(control ?c)(?g)(?l)] 'magit-log-graph)
-(global-set-key [(control ?c)(?g)(?b)] 'magit-branch-manager)
+(global-set-key [(control ?c)(?g)(?b)] 'magit-show-refs-popup)

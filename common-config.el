@@ -78,4 +78,4 @@
 (ido-mode)
 
 ;; larger monitors lead to excessive splitting
-(setq split-height-threshold 100)
+(setq split-height-threshold 150)

@@ -1,8 +1,8 @@
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ;; ("marmalade" . "http://marmalade-repo.org/packages")
-			 ("melpa-stable" . "https://melpa-stable.milkbox.net/packages/")
-			 ("melpa" . "https://melpa.milkbox.net/packages/")))
+			 ("melpa-stable" . "http://stable.melpa.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")))
 
 
 (package-initialize)
@@ -14,8 +14,7 @@
 ;; Add in your own as you wish:
 (setq my-packages
       '(lua-mode
-	scala-mode2
-	magit
+	scala-mode
 	find-file-in-project
 	coffee-mode
 	protobuf-mode
@@ -27,7 +26,6 @@
 	find-file-in-repository
 	ess
 	ess-R-data-view
-	ess-R-object-popup
 	sbt-mode
 	rvm
 	ensime
@@ -53,13 +51,48 @@
   :ensure t
   :pin melpa)
 
+(use-package tide
+  :ensure t
+  :demand
+  :config (add-hook 'typescript-mode-hook
+		    (lambda()
+		      (progn
+			(tide-setup)
+			(flycheck-mode)
+			(setq flycheck-check-syntax-automatically '(save mode-enabled)))))
+  :config (setq tide-server-max-response-length most-positive-fixnum)
+  :config
+  :config
+  :pin melpa)
+
+(use-package bazel-mode
+  :ensure t
+  :demand
+  :mode "\\.bzl\\'"
+  :mode "BUILD"
+  :pin melpa-stable)
+
+(use-package typescript-mode
+  :ensure t
+  :demand
+  :mode "\\.ts\\'"
+  :mode "\\.tsx\\'"
+  :config (setq typescript-indent-level 2)
+  :config (c-set-offset 'case-label '+)
+  :pin melpa-stable)
+
+(use-package prettier-js
+  :ensure t
+  :demand
+  :config (add-hook 'typescript-mode-hook 'prettier-js-mode))
+
 (use-package projectile
   :demand
   :pin melpa-stable
-  :init   (set projectile-use-git-grep t)
+  :init   (setq projectile-use-git-grep t)
   :config (projectile-global-mode t)
+  :config (setq projectile-enable-caching t)
   :bind   (("C-x g" . projectile-grep)))
-
 
 (require 'use-package)
 
