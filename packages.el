@@ -14,11 +14,11 @@
 ;; Add in your own as you wish:
 (setq my-packages
       '(lua-mode
+        magit
 	scala-mode
 	find-file-in-project
 	coffee-mode
 	protobuf-mode
-	icicles
 	markdown-mode
 	gist
 	yagist
