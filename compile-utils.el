@@ -21,6 +21,8 @@
 
 (global-set-key [f3] 'compile)
 (global-set-key [C-f3] 'bring-up-compilation)
+(global-set-key (kbd "C-c b t") 'bazel-test)
+(global-set-key (kbd "C-c b g") 'bzl-gen)
 ;; making sure that compilation shows me the end
 (add-hook 'compilation-mode-hook 'compilation-to-buffer-end)
 (remove-hook 'compilation-mode-hook 'compilation-to-buffer-end)
