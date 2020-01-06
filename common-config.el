@@ -57,6 +57,7 @@
 (add-to-list 'auto-mode-alist '("\\.log\\|\\.out" . auto-revert-tail-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.thrift" . thrift-mode))
+(add-to-list 'auto-mode-alist '("\\.pyst" . python-mode))
 (setq-default require-final-newline t)
 
 (add-hook 'before-save-hook

@@ -104,6 +104,23 @@
   :demand
   :pin melpa-stable)
 
+(use-package elisp-format
+  :ensure t
+  :demand
+)
+
+
+(use-package magit-rbr
+  :ensure t
+  :demand)
+
+(require 'stone-mode)
+(require 'bazel-build)
+
+(use-package package-lint
+  :ensure t
+  :demand)
+
 
 (require 'use-package)
 
