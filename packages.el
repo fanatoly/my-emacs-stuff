@@ -91,7 +91,8 @@
   :init   (setq projectile-use-git-grep t)
   :config (projectile-global-mode t)
   :config (setq projectile-enable-caching t)
-  :bind   (("C-x g" . projectile-grep)))
+  ;; legacy projectile keybinding
+  :bind   (("C-c p s g" . projectile-grep)))
 
 (use-package go-mode
   :ensure t
@@ -108,7 +109,6 @@
   :ensure t
   :demand
 )
-
 
 (use-package magit-rbr
   :ensure t
